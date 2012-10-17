@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>
+  <head>
+    <meta name="description" src="description.txt" />
+    <meta name="keywords" content="
+      the twitting dead twitter zombie html5 javascript sadasant
+    " />
+    <!-- Content-Type -->  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <!-- Shorcut Icon -->  <link rel="shortcut icon" href="/sadasant.ico">
+    <title>The Twitting Dead</title>
+    <!-- sadasant :.~
+    Go to http://sadasant.com/license to read the license.
+    -->
+
+    <!-- global scripts -->
+    <script src="js/raphaelv1.5.2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- main script -->
+    <script src="js/_.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/dead.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Style        -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/dead.css">
+  </head>
+  <body>
+
+    <div id='preload'>
+      <!-- <input type='button' value="END THIS SHIT" onClick="GAME.over('fail');"/> -->
+      <a href='http://sadasant.com'>Go Back...</a>
+      <img src="img/bg.jpg" onLoad='load()' />
+      <img src="img/bg_.jpg" onLoad='load()' />
+      <img src="img/borders.png" onLoad='load()' />
+      <img src="img/crowbar_aim.png" onLoad='load()' />
+      <img src="img/crowbar_shot.png" onLoad='load()' />
+      <img src="img/dark.png" onLoad='load()' />
+      <img src="img/handgun_aim.png" onLoad='load()' />
+      <img src="img/handgun_empty.png" onLoad='load()' />
+      <img src="img/handgun_shot.png" onLoad='load()' />
+      <img src="img/shotgun_aim.png" onLoad='load()' />
+      <img src="img/shotgun_empty.png" onLoad='load()' />
+      <img src="img/shotgun_shot.png" onLoad='load()' />
+      <img src="img/LEVEL1.png" onLoad='load()' />
+      <img src="img/LEVEL2.png" onLoad='load()' />
+      <img src="img/LEVEL3.png" onLoad='load()' />
+      <img src="img/LEVEL4.png" onLoad='load()' />
+      <img src="img/LEVEL5.png" onLoad='load()' />
+      <img src="img/LEVEL6.png" onLoad='load()' />
+      <img src="img/LEVEL7.png" onLoad='load()' />
+      <img src="img/LEVEL8.png" onLoad='load()' />
+      <img src="img/WELCOME.png" onLoad='load()' />
+      <img src="img/WELCOME2.png" onLoad='load()' />
+      <img src="img/zombie0001.png" onLoad='load()' />
+      <img src="img/zombie0001_.png" onLoad='load()' />
+      <img src="img/zombie0001_bs.png" onLoad='load()' />
+      <img src="img/zombie0001_hs.png" onLoad='load()' />
+      <img src="img/zombie0001_ls.png" onLoad='load()' />
+      <img src="img/zombie0001_rs.png" onLoad='load()' />
+      <img src="img/zombie0001_post.png" onLoad='load()' />
+      <img src="img/zombie0001_pre.png" onLoad='load()' />
+    </div>
+
+
+    <h1 align=center onmouseover='this.style.color="#720000"' onmouseout='this.style.color="#0D0D0D"'>the twitting dead</h1>
+    <div id="holder" style="clear:both;">
+      <div id='loading' align='center'>
+        <p align='center'>
+          loading <b id='loading_n'>0%</b><br>
+          <small>Be patient. If the load stays static for too long, please <a href='http://theTwittingDead.com'>refresh the page</a> .</small>
+        </p>
+      </div>
+      <div id="_" width="800" height="300">
+      </div>
+      <br>
+    </div>
+    <div id="LOGIN">
+      <div id="box">
+        <h2>Hello</h2>
+        <table>
+          <tr><td style="min-width:100px">twitter id:</td><td> <input id='twitter_id' type=text/></td></tr>
+        </table>
+        <input type=button value='Play Online' onClick='PLAY(1);'/>
+        <input type=button value='Play Offline' onClick='PLAY();'/>
+        <input type=button value='Cancel' onClick='$("#LOGIN").hide();'/>
+        <br>
+        <div id='tutorial'>
+          <p id='text'>
+            <h3>about:</h3>
+            - You must aim <small>(with your mouse)</small> and fire <small>(clicking)</small>.<br>
+            - Keyboard buttons <b>1</b>, <b>2</b> & <b>3</b> are your weapons.<br>
+            - Your dead are your twitter <b>followers</b>.<br>
+            - Your handgun bullets are your <b>tweets</b>.<br>
+            - Your shotgun bullets are your <b>favorites</b>.<br> 
+            - Press <b>Esc</b> or <b>x</b> to STOP the game.<br> 
+            <br>
+            Currently working fine with the latest versions of:<br>
+            - Firefox.<br>
+            - Chrome & Chromium.<br>
+            - Opera.<br>
+            <br>
+            To report any feedback or bug, contact me <a href="http://sadasant.com">here</a>.
+          </p>
+        <br>
+        <div id='license'>
+          Made by <a href='http://sadasant.com/'>Daniel J. Rodríguez S.</a><br>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div id='BOTTOM'>
+      <table id='status'>
+        <tr>
+          <td>level: <b id='level'></b> ❥</td>
+          <td>life: <b id='life'></b> ♥</td>
+          <td>zombies: <b id='lzomb' style='color:red'></b> of <b id='zomb'></b> ☠</td>
+        </tr>
+      </table>
+      <table id='status'>
+        <tr>
+          <td id='crowbar'>1. crowbar: <b id='b_crowbar'>1</b> ⌉</td>
+          <td id='handgun'>2. handgun: <b id='b_handgun'></b> ◎</td>
+          <td id='shotgun'>3. shotgun: <b id='b_shotgun'></b> ▩</td>
+        </tr>
+      </table>
+      <div id='banner'>
+        <a id='tweet' href='http://twitter.com/?status=I%20am%20shooting%20dead%20people%20on%20www.theTwittingDead.com%20!!!%20Help%20me%20fight%20@theTwittingDead%20!!!' target="_blank">¿Do you like it?</a>
+        <div id='license'>
+          Made by <a href='http://sadasant.com/'>Daniel J. Rodríguez S.</a><br>
+          The Twitting Dead is free software: you can redistribute it and/or modify
+          it under the terms of the GNU General Public License as published by
+          the Free Software Foundation, either version 3 of the License, or
+          (at your option) any later version.
+
+          The Twitting Dead is distributed in the hope that it will be useful,
+          but WITHOUT ANY WARRANTY; without even the implied warranty of
+          MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+          GNU General Public License for more details.
+
+          You should have received a copy of the GNU General Public License
+          along with The Twitting Dead.  If not, see http://www.gnu.org/licenses/.
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+    <!-- <img src='http://sadasant.com/skull.png' onerror='ONLINE=0;' onload='ONLINE=1;' /> -->
+    <!-- SOUND APPLETS -->
+    <div id='ogg'>
+      <audio id="s_crowbar" src="audio/crowbar.ogg" src="audio/crowbar.ogg" preload="auto">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="s_handgun" src="audio/handgun.ogg" preload="auto"></audio>
+      <audio id="s_shotgun" src="audio/shotgun.ogg" preload="auto"></audio>
+      <audio id="s_empty" src="audio/empty.ogg" preload="auto"></audio>
+      <audio id="s_dead_harm" src="audio/dead_harm.ogg" preload="auto"></audio>
+      <audio id="s_dead_wake" src="audio/dead_wake.ogg" preload="auto"></audio>
+      <audio id="s_dead_attack" src="audio/dead_attack.ogg" preload="auto"></audio>
+      <audio id="s_dead_pop" src="audio/dead_pop.ogg" preload="auto"></audio>
+      <audio id="s_heart" src="audio/heart.ogg" preload="auto"></audio>
+      <audio id="s_level1" src="audio/level1.ogg" preload="auto"></audio>
+      <audio id="s_level2" src="audio/level2.ogg" preload="auto"></audio>
+      <audio id="s_level3" src="audio/level3.ogg" preload="auto"></audio>
+      <audio id="s_level4" src="audio/level4.ogg" preload="auto"></audio>
+      <audio id="s_level5" src="audio/level5.ogg" preload="auto"></audio>
+      <audio id="s_level6" src="audio/level6.ogg" preload="auto"></audio>
+      <audio id="s_level7" src="audio/level7.ogg" preload="auto"></audio>
+      <audio id="s_level8" src="audio/level8.ogg" preload="auto"></audio>
+    </div>
+    <div id='wav'>
+      <audio id="s_crowbar" src="audio/crowbar.wav" src="audio/crowbar.wav" preload="auto">
+        Your browser does not support the audio element.
+      </audio>
+      <audio id="s_handgun" src="audio/handgun.wav" preload="auto"></audio>
+      <audio id="s_shotgun" src="audio/shotgun.wav" preload="auto"></audio>
+      <audio id="s_empty" src="audio/empty.wav" preload="auto"></audio>
+      <audio id="s_dead_harm" src="audio/dead_harm.wav" preload="auto"></audio>
+      <audio id="s_dead_wake" src="audio/dead_wake.wav" preload="auto"></audio>
+      <audio id="s_dead_attack" src="audio/dead_attack.wav" preload="auto"></audio>
+      <audio id="s_dead_pop" src="audio/dead_pop.wav" preload="auto"></audio>
+      <audio id="s_heart" src="audio/heart.wav" preload="auto"></audio>
+      <audio id="s_level1" src="audio/level1.wav" preload="auto"></audio>
+      <audio id="s_level2" src="audio/level2.wav" preload="auto"></audio>
+      <audio id="s_level3" src="audio/level3.wav" preload="auto"></audio>
+      <audio id="s_level4" src="audio/level4.wav" preload="auto"></audio>
+      <audio id="s_level5" src="audio/level5.wav" preload="auto"></audio>
+      <audio id="s_level6" src="audio/level6.wav" preload="auto"></audio>
+      <audio id="s_level7" src="audio/level7.wav" preload="auto"></audio>
+      <audio id="s_level8" src="audio/level8.wav" preload="auto"></audio>
+    </div>
+    <!--
+    <input type='button' value='Play Crowbar' onClick='document.getElementById("s_crowbar").play();'/>
+    <input type='button' value='Play Handgun' onClick='document.getElementById("s_handgun").play();'/>
+    <input type='button' value='Play Shotgun' onClick='document.getElementById("s_shotgun").play();'/>
+    <input type='button' value="Play empty" onClick='document.getElementById("s_empty").play();'/>
+    <input type='button' value='Play Dead Harm' onClick='document.getElementById("s_dead_harm").play();'/>
+    <input type='button' value='Play Dead Wake' onClick='document.getElementById("s_dead_wake").play();'/>
+    <input type='button' value='Play Dead Atack' onClick='document.getElementById("s_dead_attack").play();'/>
+    <input type='button' value='Play Dead Pop' onClick='document.getElementById("s_dead_pop").play();'/>
+    <input type='button' value="Play heart" onClick='document.getElementById("s_heart").play();'/>
+    <input type='button' value="Play level 1's audio" onClick='document.getElementById("s_level1").play();'/>
+    <input type='button' value="Play level 2's audio" onClick='document.getElementById("s_level2").play();'/>
+    <input type='button' value="Play level 3's audio" onClick='document.getElementById("s_level3").play();'/>
+    <input type='button' value="Play level 4's audio" onClick='document.getElementById("s_level4").play();'/>
+    -->
+    <br>
+    <div id="mess" >
+      <p id="mess_l">
+      </p>
+      <p id="mess_r">
+      <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-1530017453619318";
+        /* Adds for surviving */
+        google_ad_slot = "2768443522";
+        google_ad_width = 120;
+        google_ad_height = 240;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+      </p>
+    </div>
+  </body>
+</html>

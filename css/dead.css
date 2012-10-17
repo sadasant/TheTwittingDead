@@ -1,0 +1,261 @@
+/*
+dead.css
+a part of The Twitting Dead
+by Daniel J. Rodriguez S. http://sadasant.com
+www.theTwittingDead.com
+
+The Twitting Dead is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+The Twitting Dead is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with The Twitting Dead.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+@font-face {
+	font-family:'DEATH';
+	font-weight:bold;
+	src:local('DEATH'), url(../fonts/DEATH_FONT.TTF) format('truetype');
+}
+BODY {
+	font:bold 91px/1.2 'DEATH', sans-serif;
+  font-size: 18px;
+  background-color: #030303;
+  background-image:url(../img/bg.jpg);
+  background-repeat:repeat-x;
+  background-position:top;
+  background-attachment:fixed;
+  color: #DDDDDD;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+small {
+  font:9px sans-serif;
+  color:#720000;
+}
+
+H1 {
+  position:relative;
+  margin:22px auto 0px;
+  color:#777;
+  font-size: 91px;
+}
+
+#holder {
+  background:#000;
+  position: fixed;
+  width: 100%;
+  height:270px;
+  top: 130px;
+  left:0px;
+  border-top: 2px solid #0D0D0D;
+  border-bottom: 2px solid #0D0D0D;
+}
+
+#_ {
+  position: relative;
+  width:600px;
+  margin:0 auto -22px;
+/*  position: absolute;
+  top: 0;
+  left: 0;
+*/
+}
+
+#mess_l{
+  position:fixed;
+  top:125px;
+  left:11px;
+  color:#720000;
+  font:11px sans-serif;
+}
+
+#mess_r{
+  position:fixed;
+  top:136px;
+  right:11px;
+  color:#720000;
+  font:11px sans-serif;
+  z-index:1;
+}
+
+#score{
+  font:12px sans-serif;
+  color:#720000;
+  margin-top:-10px;
+}
+
+.score{
+  margin-top:10px;
+}
+
+#score b{
+	font:bold 18px 'DEATH', sans-serif;
+  color:#777;
+}
+
+#loading_n {
+  font-family: sans-serif;
+}
+
+#LOGIN {
+  position:fixed;
+  background:url(../img/dark.png);
+  background-repeat: repeat;
+  background-position: left top;
+  top:-1000px;
+  left:0px;
+  width:100%;
+  height:100%;
+  z-index:2;
+}
+
+#LOGIN #box{
+  position:relative;
+  background-image:url(../img/LOGIN.png);
+  background-repeat:no-repeat;
+  background-position:left;
+  margin:-50px auto 0px;
+  width:489px;
+  height:527px;
+  text-align:center;
+  padding:0px 0px 0px 0px;
+}
+
+#LOGIN #box h2{
+  font-size:50px;
+  color:#720000;
+  padding:25px 0px 0px 0px;
+}
+
+#LOGIN #box table{
+  position:absolute;
+  color:#720000;
+  text-align:center;
+  margin-left:30px;
+  margin-top:-45px;
+  width:100%;
+  padding:0px 170px 0px 50px;
+}
+
+#LOGIN #box #tutorial{
+  color:#333;
+  width:100%;
+  font:11px sans-serif;
+  text-align:left;
+  margin-top:20px;
+  padding:0px 170px 0px 50px;
+  overflow-x:hidden;
+}
+
+#LOGIN #box #tutorial h3{
+  color:#333;
+	font:bold 22px/1.2 'DEATH', sans-serif;
+	margin-top:40px;
+	margin-bottom:10px;
+}
+
+#LOGIN #box #tutorial b{
+  color:#720000;
+}
+
+#BOTTOM{
+  position:fixed;
+  top:-1000px;
+  left:0px;
+  width:100%;
+}
+
+#status {
+  position:relative;
+  background:#0f0000;
+  background-image:url(../img/tr.jpg);
+  background-repeat:repeat-x;
+  background-position:left;
+  color:#777777;
+  width:100%;
+  margin-bottom:2px;
+}
+
+#status td {
+  width:33%;
+  height:27px;
+  text-align:center;
+}
+
+#banner {
+  position:relative;
+  background:#000;
+  background-image:url(../img/bg_.jpg);
+  background-repeat:repeat-x;
+  background-position:left;
+  text-align:center;
+  height:130px;
+  width:100%;
+}
+
+#banner #tweet{
+  position:relative;
+  top:10px;
+}
+
+#banner a{
+  color:#720000 !important;
+}
+
+#banner a:hover{
+  color:#FF0000 !important;
+}
+
+#LOAD{
+}
+
+#license{
+  color:#111;
+  position:absolute;
+  text-align:center;
+  vertical-align:middle;
+  font:8px sans-serif;
+  bottom:15px;
+  left:5%;
+  width:90%;
+}
+
+a{
+  color:#555;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+a:hover{
+  color:#720000;
+}
+
+#preload{
+  position:fixed;
+  bottom:0px;
+}
+
+#preload a{
+  color:#720000;
+}
+
+#preload a:hover{
+  color:red;
+}
+
+#preload img{
+  width:1px;
+  height:1px;
+}
